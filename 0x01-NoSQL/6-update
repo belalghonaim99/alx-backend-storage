@@ -1,3 +1,6 @@
 // adds a new attribute to a document  and updates
 
-db.school.updateMany({name:"Holberton school"}, {$set: {address: "972 Mission street"}})
+db.school.updateMany(
+    { name: "Holberton school" },
+    { $set: { address: "972 Mission street" } }
+);
