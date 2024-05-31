@@ -42,5 +42,5 @@ if __name__ == "__main__":
     url = 'http://slowwly.robertomurray.co.uk/delay/5000/url/http://www.google.com'
     print("Accessing URL:", url)
     print("Content:", get_page(url))
-    
+
     print("Access Count for", url, ":", redis_store.get(f'count:{url}').decode('utf-8'))
