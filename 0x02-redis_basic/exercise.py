@@ -80,8 +80,8 @@ class Cache:
             fn: Callable = None,
             ) -> Union[str, bytes, int, float]:
         """ Retrieves data from a Redis data storage."""
-        data_key = self._redis.get(key)
-        return fn(data_key) if fn is not None else data_key
+        data = self._redis.get(key)
+        return fn(data) if fn is not None else data
 
     def get_str(self, key: str) -> str:
         """ Retrieves a string value from a Redis data storage."""
