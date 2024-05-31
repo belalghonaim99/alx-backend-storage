@@ -24,7 +24,7 @@ def data_cacher(method: Callable) -> Callable:
         result = method(url)
         redis_store.setex(f'result:{url}', 10, result)
         return result
-    
+
     return invoker
 
 
