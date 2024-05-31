@@ -30,12 +30,13 @@ def data_cacher(method: Callable) -> Callable:
 
 @data_cacher
 def get_page(url: str) -> str:
-    """ Fetches the page at the given URL and returns its content
+    """ Fetches the page content
     From HTML FILE
     """
     return requests.get(url).text
-
 """Used to simulate a slow response and test your caching."""
+
+
 if __name__ == "__main__":
     url = 'http://slowwly.robertomurray.co.uk/delay/5000/url/http://www.google.com'
     print(get_page(url))
