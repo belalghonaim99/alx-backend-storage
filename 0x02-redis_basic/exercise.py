@@ -7,10 +7,10 @@ import uuid
 
 
 def count_calls(method: Callable) -> Callable:
-    """ Decorator that increments the count of how many times a method is called."""
+    """ Decorator that increments the count"""
     @wraps(method)
     def wrapper(self, *args, **kwargs) -> Any:
-        """ Wrapper function that increments the count of how many times a method is called."""
+        """ Wrapper function that increments"""
 
         if isinstance(self._redis, redis.Redis):
             self._redis.incr(method.__qualname__)
@@ -23,7 +23,7 @@ def call_history(method: Callable) -> Callable:
     """ Decorator that stores the history of inputs and outputs for a method."""
     @wraps(method)
     def invoker(self, *args, **kwargs) -> Any:
-        """ Invoker function that stores the history of inputs and outputs for a method."""
+        """ Invoker function that stores"""
         input_key = '{}:inputs'.format(method.__qualname__)
         output_key = '{}:outputs'.format(method.__qualname__)
         if isinstance(self._redis, redis.Redis):
