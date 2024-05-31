@@ -20,7 +20,7 @@ def count_calls(method: Callable) -> Callable:
 
 
 def call_history(method: Callable) -> Callable:
-    """ Decorator that stores the history of inputs and outputs for a method."""
+    """ Decorator that stores"""
     @wraps(method)
     def invoker(self, *args, **kwargs) -> Any:
         """ Invoker function that stores"""
