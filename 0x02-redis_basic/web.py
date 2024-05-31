@@ -34,10 +34,9 @@ def get_page(url: str) -> str:
     From HTML FILE
     """
     return requests.get(url).text
+
+
 """Used to simulate a slow response and test your caching."""
 
 
 if __name__ == "__main__":
-    url = 'http://slowwly.robertomurray.co.uk/delay/5000/url/http://www.google.com'
-    print(get_page(url))
-    print(get_page(url))
