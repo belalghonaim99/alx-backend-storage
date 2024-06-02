@@ -1,7 +1,7 @@
---SQL Script that creates a table users
-CREATE TABLE IF NOT EXISTS users (
+-- Source: Create table with unique email field
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
-    name VARCHAR(255),
-    country ENUM('US', 'CO', 'TN') NOT NULL
+    name VARCHAR(255)
 );
